@@ -89,7 +89,7 @@ If I Had More Time, I Would:
 
 Optimized for platforms like **Netlify**:
 
->npm run build
+>npm run build  
 >*dist/ is generated and ready to deploy*
 
 ## Testing
