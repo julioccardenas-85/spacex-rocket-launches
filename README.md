@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpaceX Launches Explorer
 
-## Getting Started
+A frontend project that displays and explores SpaceX launch data using the public [SpaceX API](https://github.com/r-spacex/SpaceX-API).
 
-First, run the development server:
+[Live Netlify link](https://elegant-syrniki-110783.netlify.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 1. Architecture & Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project follows a clean and modular structure for clarity and scalability:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ 
+> /my-app
+ ├─ /app               # Page-level views (Home, LaunchDetails) 
+ ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)
+ ├─ /lib               # API services & fetch utilities
+ ├─ /public            # Static images & styling
+ ├─ /types             # TypeScript interfaces for API responses
+ └─ main.tsx           # App entry point
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+*Why this Organization?*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Separation of concerns: Pages handle layout, components handle UI, /lib focuses on data.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Scalability: Easy to add new views (e.g., Rockets, Crew, Capsules) without refactoring.
 
-## Deploy on Vercel
+Types folder: Ensures reliability when working with API models.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Tech Choices
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+| Tool          | Reason                                             |
+|---------------|----------------------------------------------------|
+| React + Vite  | Fast dev server + optimized build output           |
+| TypeScript    | Prevents runtime errors, improves API reliability  |
+| React Query   | Data caching, loading/error states, auto-refetching|
+| React Router  | Clean route mapping for / and /launch/:id          |
+| SpaceX API    | Free REST API with real launch data                |
+
+
+## 2. AI Usage (Transparency)
+
+AI was used as a productivity tool, not as the sole developer.
+
+| Tool                | How It Was Used                                                       |
+|----------------------|-----------------------------------------------------------------------|
+| ChatGPT              | Drafted TypeScript interfaces and helped debug async fetch errors    |
+| ChatGPT (prompting)  | Brainstormed UI layout ideas and improved copywriting in components  |
+
+All generated code was reviewed, refactored, and adapted manually.
+No AI-generated code was used without validation.
+
+## 3. Design Decisions
+
+The UI design focuses on clarity and quick navigation:
+
+- The home page uses a card grid and list layout to browse launches by name, date, and status.
+- Each card includes key information (mission name, date, success/failure badge).
+- The details page prioritizes readability: launch summary, rocket info, and external links.
+- Visual hierarchy:
+  - Titles > metadata > descriptions > external links.
+- Status colors:
+  - 🟢 **Success**
+  - 🔴 **Failed**
+
+
+UX Goal: Zero-confusion flow. A user should understand a mission at a glance.
+
+## 4. Challenges & Trade-offs
+
+| **Challenge**                               | **Solution**                                                        |
+|---------------------------------------------|---------------------------------------------------------------------|
+| Inconsistent API fields between launches     | Created strict TypeScript interfaces & optional chaining            |
+| Pagination / too much data at once           | Cached & limited results with React Query                           |
+| API rate limits                              | Added basic request retry + fallback error UI                       |
+| Deep details vary by mission                 | Display only available fields and avoid blank-space design issues   |
+
+If I Had More Time, I Would:
+
+- Add more filtering options (by year, rocket type)
+- Add search with debounced requests
+- Improve error states with retry/backoff strategies
+- Implement dark mode
+- Improve UI design
+- Add more test cases (unit + integration)
+
+## Deployment
+
+Optimized for platforms like **Netlify**:
+
+>npm run build
+># dist/ is generated and ready to deploy
+
+## Testing
+
+An example test case was created for LaunchPatch component, it can be executed from Terminal:
+
+>npm test
