@@ -2,7 +2,7 @@
 
 A frontend project that displays and explores SpaceX launch data using the public [SpaceX API](https://github.com/r-spacex/SpaceX-API).
 
-[Live Netlify link](https://elegant-syrniki-110783.netlify.app/)
+[SpaceX Launches Explorer - Live Netlify link](https://elegant-syrniki-110783.netlify.app/)
 
 
 ## 1. Architecture & Tech Stack
@@ -11,12 +11,12 @@ This project follows a clean and modular structure for clarity and scalability:
 
  
 > /my-app
- ├─ /app               # Page-level views (Home, LaunchDetails) 
- ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)
- ├─ /lib               # API services & fetch utilities
- ├─ /public            # Static images & styling
- ├─ /types             # TypeScript interfaces for API responses
- └─ main.tsx           # App entry point
+> ├─ /app               # Page-level views (Home, LaunchDetails) 
+> ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)
+> ├─ /lib               # API services & fetch utilities
+> ├─ /public            # Static images & styling
+> ├─ /types             # TypeScript interfaces for API responses
+> └─ main.tsx           # App entry point
 
 
 *Why this Organization?*
@@ -90,7 +90,7 @@ If I Had More Time, I Would:
 Optimized for platforms like **Netlify**:
 
 >npm run build
-># dist/ is generated and ready to deploy
+>*dist/ is generated and ready to deploy*
 
 ## Testing
 
