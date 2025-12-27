@@ -10,12 +10,12 @@ A frontend project that displays and explores SpaceX launch data using the publi
 This project follows a clean and modular structure for clarity and scalability:
 
  
-> /my-app
-> ├─ /app               # Page-level views (Home, LaunchDetails) 
-> ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)
-> ├─ /lib               # API services & fetch utilities
-> ├─ /public            # Static images & styling
-> ├─ /types             # TypeScript interfaces for API responses
+> /my-app  
+> ├─ /app               # Page-level views (Home, LaunchDetails)  
+> ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)  
+> ├─ /lib               # API services & fetch utilities  
+> ├─ /public            # Static images & styling  
+> ├─ /types             # TypeScript interfaces for API responses  
 > └─ main.tsx           # App entry point
 
 
