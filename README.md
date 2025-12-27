@@ -12,12 +12,11 @@ This project follows a clean and modular structure for clarity and scalability:
  
 > /my-app  
 > ├─ /app               # Page-level views (Home, LaunchDetails)  
+>   └─ page.tsx         # App entry point  
 > ├─ /components        # Reusable UI components (LaunchCard, LaunchPatch, Sidebar)  
 > ├─ /lib               # API services & fetch utilities  
 > ├─ /public            # Static images & styling  
 > ├─ /types             # TypeScript interfaces for API responses  
-> └─ main.tsx           # App entry point
-
 
 *Why this Organization?*
 
@@ -32,11 +31,11 @@ Types folder: Ensures reliability when working with API models.
 
 | Tool          | Reason                                             |
 |---------------|----------------------------------------------------|
-| React + Vite  | Fast dev server + optimized build output           |
-| TypeScript    | Prevents runtime errors, improves API reliability  |
-| React Query   | Data caching, loading/error states, auto-refetching|
-| React Router  | Clean route mapping for / and /launch/:id          |
-| SpaceX API    | Free REST API with real launch data                |
+| React + Next.js | Fast dev server + optimized build output        |
+| TypeScript      | Prevents runtime errors, improves API reliability  |
+| React Query     | Data caching, loading/error states, auto-refetching|
+| React Router    | Clean route mapping for / and /launch/:id          |
+| SpaceX API      | Free REST API with real launch data                |
 
 
 ## 2. AI Usage (Transparency)
