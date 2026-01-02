@@ -31,7 +31,7 @@ export default async function LaunchDetailPage(props: { params: Promise<{ id: st
         <ArrowLeft size={18} />
         Back
       </Link>
-      <div className="bg-white rounded-xl shadow p-6">
+      <div className="bg-white rounded-xl shadow p-6 dark:bg-gray-800">
         {/* Title */}
         <h1 className="text-3xl font-bold mb-6 border-b pb-3 flex items-center gap-3">
           <LaunchPatch
@@ -102,7 +102,7 @@ export default async function LaunchDetailPage(props: { params: Promise<{ id: st
 
             <div className="border-b pb-4">
               <h2 className="text-2xl font-semibold mb-2">Description</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 {details || "No additional information available."}
               </p>
             </div>

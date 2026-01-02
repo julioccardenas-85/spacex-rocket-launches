@@ -42,14 +42,14 @@ export default function LaunchList() {
     const loadMore = () => setVisibleCount((prev) => prev + 10);
 
     return (
-        <section className="bg-white rounded-xl shadow p-6 mt-8">
+        <section className="bg-white rounded-xl shadow p-6 mt-8 dark:bg-gray-800">
 
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Launches</h2>
 
                 {/* Filter */}
                 <select
-                    className="border p-2 rounded-md"
+                    className="border p-2 rounded-md dark:bg-gray-800"
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                 >
@@ -98,7 +98,7 @@ export default function LaunchList() {
                                 ${launch.success === false && "bg-red-100 text-red-700"}
                             `}
                         >
-                            {launch.upcoming ? "Próximo" : launch.success ? "Éxito" : "Fallido"}
+                            {launch.upcoming ? "Upcoming" : launch.success ? "Success" : "Failed"}
                         </span>
                     </li>
                 ))}
@@ -108,7 +108,7 @@ export default function LaunchList() {
             {visibleCount < filteredLaunches.length && (
                 <button
                     onClick={loadMore}
-                    className="mt-4 w-full bg-gray-100 py-2 rounded-md hover:bg-gray-200"
+                    className="mt-4 w-full bg-gray-100 py-2 rounded-md hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600"
                 >
                     Load more
                 </button>
