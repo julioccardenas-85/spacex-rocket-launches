@@ -81,7 +81,6 @@ If I Had More Time, I Would:
 - Add more filtering options (by year, rocket type)
 - Add search with debounced requests
 - Improve error states with retry/backoff strategies
-- Implement dark mode
 - Improve UI design
 - Add more test cases (unit + integration)
 
